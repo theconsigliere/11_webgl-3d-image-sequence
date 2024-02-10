@@ -42,7 +42,7 @@ export default class Sketch {
     // var aspect = window.innerWidth / window.innerHeight;
     // this.camera = new THREE.OrthographicCamera( frustumSize * aspect / - 2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / - 2, -1000, 1000 );
     this.camera.position.set(0, 0, 1.2)
-    this.controls = new OrbitControls(this.camera, this.renderer.domElement)
+    // this.controls = new OrbitControls(this.camera, this.renderer.domElement)
     this.time = 0
 
     this.isPlaying = true
@@ -69,7 +69,7 @@ export default class Sketch {
 
   settings() {
     this.settings = {
-      progress: 0,
+      progress: 0.29,
       uDisplacementStrength: 0.0025,
     }
     this.gui = new gui()
@@ -104,6 +104,7 @@ export default class Sketch {
       side: THREE.DoubleSide,
       uniforms: {
         time: { type: "f", value: 0 },
+        progress: { value: 0.29 },
         uDiffuse: { value: null },
         uDisplacementStrength: { value: 0 },
         uMouse: { value: 0 },

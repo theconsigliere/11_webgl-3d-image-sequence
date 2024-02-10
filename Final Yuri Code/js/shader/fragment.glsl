@@ -1,6 +1,6 @@
 uniform float time;
 uniform float progress;
-uniform float uDisplacementStrentgh;
+uniform float uDisplacementStrength;
 uniform float uMouse;
 uniform sampler2D uDiffuse;
 uniform sampler2D uMotion;
@@ -84,8 +84,8 @@ void main()	{
 	vec2 subUVNext = getSubUV(vec2(4.),vUv, index+1.);
 
 
-	vec2 displacement = getDisplacement(uMotion, subUV, uDisplacementStrentgh);
-	vec2 displacementNext = getDisplacement(uMotion, subUVNext, uDisplacementStrentgh);
+	vec2 displacement = getDisplacement(uMotion, subUV, uDisplacementStrength);
+	vec2 displacementNext = getDisplacement(uMotion, subUVNext, uDisplacementStrength);
 	
 
 	vec4 tData = texture2D(uData, subUV);
